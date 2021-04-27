@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :items
-  has_many :photos, through: :items
+  has_many :bags
+  has_many :photos, through: :bags
 end

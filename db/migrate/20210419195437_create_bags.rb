@@ -1,7 +1,7 @@
-class CreateItems < ActiveRecord::Migration[6.1]
+class CreateBags < ActiveRecord::Migration[6.1]
   def change
-    create_table :items do |t|
-      t.references :user_id
+    create_table :bags do |t|
+      t.integer :user_id
       t.string :designer
       t.string :style
       t.string :size

@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Item.destroy_all
+Bag.destroy_all
 Photo.destroy_all
 
 User.create(name: "Claire", username: "claire", password: "123", is_admin: true)
 User.create(name: "Grant", username: "grant", password: "123", is_admin: false)
 
-Item.create(user_id: 2, designer: "Louis Vuitton", style: "Neverfull", size: "GM", material: "damier canvas", color: "brown", condition: "excellent", retail_price: 1620)
+Bag.create(user_id: 2, designer: "Louis Vuitton", style: "Neverfull", size: "GM", material: "damier canvas", color: "brown", condition: "excellent", retail_price: 1620)
 
-Photo.create(item_id: 1, file: "IMG_0006.jpeg")
+Photo.create(bag_id: 1, file: "IMG_0006.jpeg")
 
-if (Item.all.length == 0) 
+if (Bag.all.length == 0) 
   puts 'no items'
 elsif (Photo.all.length == 0)
   puts 'no photos'

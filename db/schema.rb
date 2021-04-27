@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_20_185545) do
 
-  create_table "items", force: :cascade do |t|
+  create_table "bags", force: :cascade do |t|
     t.integer "user_id"
     t.string "designer"
     t.string "style"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_185545) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "item_id"
+    t.integer "bag_id"
     t.string "file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
