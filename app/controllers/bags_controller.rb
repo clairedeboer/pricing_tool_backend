@@ -14,6 +14,12 @@ class BagsController < ApplicationController
     render json: bag
   end
 
+  def update
+    bag=Bag.find(params[:id])
+    bag.update(bag_params)
+    render json: bag
+  end
+
   private
   def bag_params
     params.permit(:user_id, :designer, :style, :size, :material, :color, :condition, :retail_price, :resale_value)
