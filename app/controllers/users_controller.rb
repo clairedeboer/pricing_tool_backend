@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
+  before_action :authenticate, only: [:me]
   
   def login
-    user = User.find_by(username: params[:username])
+    user = User.first
     render json: user
   end
 
+  def me
+    user = @current_user
+    render json: user
+  end
+  
   def signup
     user = User.create(user_params)
     render json: user
   end
-  
   
   def logout
     user = User.find(params[:id])

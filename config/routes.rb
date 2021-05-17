@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   post '/bags', to: 'bags#create'
   patch '/bags/:id', to: 'bags#update'
 
+  post '/login', to: 'users#login'
+  get '/me', to: 'users#me'
+  post '/signup', to: 'users#signup'
+  delete '/logout', to: 'users#logout'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
