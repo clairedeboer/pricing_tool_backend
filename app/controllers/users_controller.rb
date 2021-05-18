@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:me]
+  before_action :authenticate, only: [:me, :login]
   
   def login
-    user = User.first
+    user = @current_user
     render json: user
   end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:name, :username, :password)
+    params.permit(:name, :username, :password, :is_admin)
   end
   
 end

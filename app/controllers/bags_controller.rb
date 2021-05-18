@@ -1,7 +1,14 @@
 class BagsController < ApplicationController
+  before_action :authenticate, only: [:index]
+  #if user is admin only
+
   def index
-    bags = Bag.all
-    render json: bags
+    if (@current_user.is_admin == true)
+      bags = Bag.all
+      render json: bags
+    else
+      render json: User.last.bags
+    end
   end
 
   def show
