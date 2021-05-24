@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:me, :login]
+  before_action :authenticate, only: [:login, :me]
   
   def login
     user = @current_user

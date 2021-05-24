@@ -3,11 +3,12 @@ class BagsController < ApplicationController
   #if user is admin only
 
   def index
+   p 'user!!!!!!' + @current_user.to_s
     if (@current_user.is_admin == true)
       bags = Bag.all
       render json: bags
     else
-      render json: User.last.bags
+      render json: @current_user.bags
     end
   end
 
