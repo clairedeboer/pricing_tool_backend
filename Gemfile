@@ -22,6 +22,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry', '~> 0.14.1'
+
+# Use Json Web Token (JWT) for token based authentication
+gem 'jwt'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
