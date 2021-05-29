@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   resources :photos
   # resources :items
   # resources :users
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   post '/bags', to: 'bags#create'
   patch '/bags/:id', to: 'bags#update'
 
-  post '/login', to: 'users#login'
+  post '/login', to: 'sessions#create'
   get '/me', to: 'users#me'
   post '/signup', to: 'users#signup'
   delete '/logout', to: 'users#logout'

@@ -1,5 +1,4 @@
 class BagsController < ApplicationController
-  before_action :authenticate, only: [:index]
   #if user is admin only
 
   def index

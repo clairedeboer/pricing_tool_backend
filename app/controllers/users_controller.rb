@@ -1,11 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:login, :me]
-  
-  def login
-    user = @current_user
-    render json: user
-  end
-
   def me
     user = @current_user
     render json: user
