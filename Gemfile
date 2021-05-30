@@ -25,7 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry', '~> 0.14.1'
 
 # Use Json Web Token (JWT) for token based authentication
-gem 'jwt'
+gem "jwt", "~> 2.2"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

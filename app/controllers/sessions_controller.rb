@@ -2,21 +2,14 @@ class SessionsController < ApplicationController
   before_action :authenticate, except: [:create]
 
   def create
-    user = User.find_by(username: params[:session][:username])
-    user && user.authenticate(params[:session][:password]) 
+    user = User.find_by(username: params[:username])
+    user && user.authenticate(params[:password]) 
     if (user)
-      # set encoded JWT token and include on response
-      binding.pry
-      render json: user
+      token = JsonWebToken.encode(user_id: user.id)
+      render json: { user: user, token: token }, status: :ok
+    else
+      render json: { error: 'unauthorized' }, status: :unauthorized
     end
   end
 
-  def destroy
-  end
-
-  private 
-
-  def session_params
-    params.require(:session).permit(:username, :password)
-  end 
 end

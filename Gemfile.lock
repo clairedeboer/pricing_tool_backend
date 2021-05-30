@@ -215,7 +215,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
-  jwt
+  jwt (~> 2.2)
   listen (~> 3.3)
   pry (~> 0.14.1)
   puma (~> 5.0)

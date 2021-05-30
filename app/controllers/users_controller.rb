@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   
   def signup
     user = User.create(user_params)
-    render json: user
-  end
-  
-  def logout
-    user = User.find(params[:id])
-    user.destroy
+    if (user)
+      token = JsonWebToken.encode(user_id: user.id)
+      render json: { user: user, token: token }, status: :created
+    else
+      render json: { error: 'bad request' }, status: :bad_request
+    end
   end
 
   private
