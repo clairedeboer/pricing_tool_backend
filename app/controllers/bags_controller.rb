@@ -17,6 +17,7 @@ class BagsController < ApplicationController
 
   def create
     bag = Bag.create(bag_params)
+    file = Photo.create(photo_params)
     render json: bag
   end
 
@@ -29,5 +30,9 @@ class BagsController < ApplicationController
   private
   def bag_params
     params.permit(:user_id, :designer, :style, :size, :material, :color, :condition, :retail_price, :resale_value)
+  end
+
+  def photo_params
+    params.permit(:bag_id, :file)
   end
 end
