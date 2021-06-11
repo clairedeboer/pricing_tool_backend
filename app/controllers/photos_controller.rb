@@ -11,6 +11,6 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.permit(:bag_id, :file)
+    params.permit(:bag_id, :featured_image)
   end
 end
