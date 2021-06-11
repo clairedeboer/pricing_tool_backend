@@ -17,7 +17,7 @@ class BagsController < ApplicationController
 
   def create
     bag = Bag.create(bag_params)
-    file = Photo.create(photo_params)
+    bag.photos << Photo.create(photo_params)
     render json: bag
   end
 
@@ -33,6 +33,6 @@ class BagsController < ApplicationController
   end
 
   def photo_params
-    params.permit(:bag_id, :file)
+    params.permit(:featured_image)
   end
 end

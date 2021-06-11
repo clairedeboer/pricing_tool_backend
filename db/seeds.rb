@@ -17,8 +17,6 @@ Bag.create(user_id: 2, designer: "Louis Vuitton", style: "Neverfull", size: "GM"
 Bag.create(user_id: 2, designer: "Chanel", style: "Classic Flap Bag", size: "Medium", material: "Caviar", color: "black", condition: "great", retail_price: 3500)
 Bag.create(user_id: 2, designer: "Gucci", style: "Dionysus", size: "Small", material: "Calfskin", color: "orange", condition: "great", retail_price: 1800)
 
-Photo.create(bag_id: 1, file: "IMG_0006.jpeg")
-
 if (Bag.all.length == 0) 
   puts 'no items'
 elsif (Photo.all.length == 0)
